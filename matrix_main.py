@@ -6,6 +6,7 @@
 
 from matrix_lib import Matrix
 
+
 def main():
     matrix = Matrix()
 
@@ -23,32 +24,32 @@ def main():
 
         choice = input("Lựa chọn của bạn: ")
 
-        if choice == '1':
+        if choice == "1":
             matrix.input_matrix()
             print("Ma trận đã nhập:")
             matrix.print_matrix()
             matrix.save_to_file("Ma trận ban đầu: ")
 
-        elif choice == '2':
+        elif choice == "2":
             matrix.input_from_file()
             print("Ma trận đã đọc từ file:")
             matrix.print_matrix()
             matrix.save_to_file("Ma trận ban đầu: ")
 
-        elif choice == '3':
+        elif choice == "3":
             scalar = float(input("Nhập số để nhân với ma trận: "))
             result = matrix.multiply_by_scalar(scalar)
             print("Kết quả của phép nhân:")
             result.print_matrix()
             result.save_to_file("Ma trận sau khi nhân với " + str(scalar) + ":")
 
-        elif choice == '4':
+        elif choice == "4":
             result = matrix.transpose()
             print("Ma trận chuyển vị:")
             result.print_matrix()
             result.save_to_file("Ma trận chuyển vị: ")
 
-        elif choice == '5':
+        elif choice == "5":
             try:
                 result = matrix.invert()
                 print("Ma trận nghịch đảo:")
@@ -57,7 +58,7 @@ def main():
             except ValueError as e:
                 print(f"Lỗi: {e}")
 
-        elif choice == '6':
+        elif choice == "6":
             print("Nhập ma trận thứ hai:")
             matrix2 = Matrix()
             matrix2.input_matrix()
@@ -71,12 +72,15 @@ def main():
             except ValueError as e:
                 print(f"Lỗi: {e}")
 
-        elif choice == '7':
-            print("Các kết quả của Ma trận đã được lưu vào File output.txt.\nThoát chương trình!!!")
+        elif choice == "7":
+            print(
+                "Các kết quả của Ma trận đã được lưu vào File output.txt.\nThoát chương trình!!!"
+            )
             break
 
         else:
             print("Lựa chọn không hợp lệ, vui lòng chọn lại.")
+
 
 if __name__ == "__main__":
     main()
